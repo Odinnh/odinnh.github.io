@@ -11,6 +11,7 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="assets/js/use.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/open-props" />
     <link rel="stylesheet" href="https://unpkg.com/open-props/normalize.min.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
@@ -22,12 +23,35 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
     <header>
-        <h1>Odinh</h1>
-        <p>website currently under development.</p>
+        <h1>Odin<span class="double" data-letter="h">n</span></h1>
+        <p>creative by <span class="accent-d">choice.</span></p>
     </header>
-    <p class="geoff">geoff you're an ass!</p>
+    <section>
+        <p>
+            Hello, I am Odinn a <span class="age"></span> year old graphics designer from <span title="Holland?">the
+                Netherlands.</span><br />
+            Pop culture, movies and comic books are my inspiration for a lot of my works. <br />
+            <br />
+            I like to tinker and puzzle with <span class="accent">JavaScript</span> to create interactive idea's and unique experiences for clients, friends and pet projects!
+        </p>
+    </section>
 
+    <script>
+        function getAge() {
+            const age = {
+                day: 13,
+                month: 3,
+                year: 1994
+            }
 
+            const today = new Date()
+            let years = today.getFullYear() - age.year - (today.getMonth() < age.month ? 1 : today.getDay() < age.day ? 1 : 0)
+            return `${years.isBetween(80, 90) ? 'n' : ''}${years}`
+        }
+
+        document.querySelector('.age').innerHTML = getAge()
+
+    </script>
 </body>
 
 </html>

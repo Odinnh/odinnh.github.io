@@ -1,6 +1,43 @@
-body{
-    font-family:var(--font-sans);
+body {
+	font-family: var(--font-sans);
+	background-color: var(--gray-8);
 }
-.geoff{
-    font-size: var(--font-size-00);
+.geoff {
+	font-size: var(--font-size-00);
+}
+header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 20px 40px;
+	background-color: var(--gray-9);
+}
+
+section {
+	display: flex;
+	padding: 20px;
+}
+.accent{
+	color:var(--grape-6)
+}
+.accent-d{
+	color:var(--grape-9)
+}
+.double{
+	position:relative;
+}
+.double::after{
+	content:attr(data-letter);
+	position:absolute;
+	left:0;
+	color:var(--gray-5);
+	-webkit-text-stroke:1px var(--gray-5);
+	opacity: 1;
+	display: inline-block;
+	user-select:text;
+	transition: opacity 0.2s ease-out;
+}
+h1:hover > .double::after{
+	opacity: 0;
 }
