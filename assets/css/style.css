@@ -17,6 +17,19 @@ header {
 section {
 	display: flex;
 	padding: 20px;
+	gap:20px;
+}
+section .paragraphs{
+	display: flex;
+	flex-direction: column;
+	gap:40px;
+}
+.paragraphs a{
+	text-decoration: underline;
+	color:var(--grape-6)
+}
+.paragraphs a:hover{
+	color:var(--grape-3)
 }
 .accent{
 	color:var(--grape-6)
@@ -40,4 +53,12 @@ section {
 }
 h1:hover > .double::after{
 	opacity: 0;
+}
+.profile{
+	width:var(--size-13 );
+	margin-bottom: auto;
+	border-radius:var(--radius-blob-2 );
+	box-shadow: var(--shadow-4);
+	filter: hue-rotate(15deg) saturate(110%);
+
 }
