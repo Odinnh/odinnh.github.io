@@ -29,6 +29,14 @@
     <section>
         <img class="profile" src="assets/img/profile.jpg" alt="">
         <div class="paragraphs">
+            <nav class="small-nav">
+                <ul>
+                    <li><a href="/index.html">who am i.</a></li>
+                    <li><a href="/projects.html">projects.</a></li>
+                    <!-- <li><a href="/portfolio.html">portfolio.</a></li> -->
+                    <li><a href="https://instagram.com/_odinh" target="_blank">instagram.</a></li>
+                </ul>
+            </nav>
             <h3>Who I am.</h3>
             <p>
                 Hello, I am Odinn a <span class="age"></span> year old graphics designer from <span title="Holland?">the
@@ -63,7 +71,7 @@
             }
 
             const today = new Date()
-            let years = today.getFullYear() - age.year - (today.getMonth() < age.month ? 1 : today.getDay() < age.day ? 1 : 0)
+            let years = today.getFullYear() - age.year - (today.getMonth() < age.month ? 1 : 0)
             return `${years.isBetween(80, 90) ? 'n' : ''}${years}`
         }
 
