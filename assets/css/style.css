@@ -75,6 +75,9 @@ p a{
 span p{
 	width:100%;
 }
+span{
+	width:60vw;
+}
 .shaded
 { 
 	padding:15px 20px;
@@ -87,5 +90,8 @@ span p{
 	}
 	.small-nav ul{
 		flex-direction: column;
+	}
+	span{
+		width:initial;
 	}
   }
