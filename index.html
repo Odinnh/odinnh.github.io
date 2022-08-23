@@ -19,48 +19,30 @@
 </head>
 
 <body>
-    <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-    <header>
-        <h1>Odin<span class="double" data-letter="h">n</span></h1>
-        <p>creative by <span class="accent-d">choice.</span></p>
-    </header>
     <section>
-        <img class="profile" src="assets/img/profile.jpg" alt="">
-        <div class="paragraphs">
-            <nav class="small-nav">
-                <ul>
-                    <li><a href="/index.html">who am i.</a></li>
-                    <li><a href="/projects.html">projects.</a></li>
-                    <!-- <li><a href="/portfolio.html">portfolio.</a></li> -->
-                    <li><a href="https://instagram.com/_odinh" target="_blank">instagram.</a></li>
-                    <li><a href="https://github.com/odinnh" target="_blank">Github.</a></li>
-                </ul>
-            </nav>
-            <h3>Who I am.</h3>
-            <p>
-                Hello, I am Odinn a <span class="age"></span> year old graphics designer from <span title="Holland?">the
-                    Netherlands.</span><br />
-                Pop culture, movies and comic books are my inspiration for a lot of my works. <br />
+        <header>
+            <h1>Odinh</h1>
+            <p>creative by <c>choice.</c>
             </p>
-            <p>
-                I like to tinker and puzzle with <span class="accent">digital designs</span> to create interactive
-                idea's and
-                unique
-                experiences for clients, friends and pet projects!
-            </p>
-            <p>
-                Notably i've worked on a complete rebranding of a clothing store <a
-                    href="https://www.go-britain.nl/">Go&nbsp;Britain</a>, due to the 2020 pandemic which we could not
-                deploy.
-            </p>
-            <p>
-                During my co-op at <a href="https://www.laliquemuseum.nl/">Musee Lalique Netherlands</a> we've developed
-                a catalogue/story documentation for a
-                collection of works made by the famous glasswork artist Réne Lalique
-            </p>
-        </div>
+        </header>
+        <nav class="small-nav">
+            <ul>
+                <li><a href="/index.html">who am i.</a></li>
+                <li><a href="/projects.html">projects.</a></li>
+                <li><a href="https://instagram.com/_odinh" target="_blank">instagram.</a></li>
+                <li><a href="https://github.com/odinnh" target="_blank">Github.</a></li>
+            </ul>
+        </nav>
+        <pre id="intro" class="output"><h3>Who I am.</h3><img class="profile" src="assets/img/profile.jpg" alt="">Hello, I am Odinn a <c class="age"></c> year old graphics designer from <c title="Holland?">The Netherlands.</c>
+Pop culture, movies and comic books are my inspiration for a lot of my works.
+
+I like to tinker and puzzle with <span class="accent">digital designs</span> to create interactive idea's and unique experiences for clients, friends and pet projects!
+
+Notably i've worked on a complete rebranding of a clothing store <a href="https://www.go-britain.nl/">Go&nbsp;Britain</a>, due to the 2020 pandemic which we could not deploy.
+
+
+During my co-op at <a href="https://www.laliquemuseum.nl/">Musee Lalique Netherlands</a> we've developed a catalogue/story documentation for a collection of works made by the famous glasswork artist Réne Lalique
+</pre>
     </section>
 
     <script>
@@ -72,7 +54,7 @@
             }
 
             const today = new Date()
-            let years = today.getFullYear() - age.year - (today.getMonth() < age.month ? 1 : 0)
+            let years = today.getFullYear() - age.year - (today.getMonth() <= age.month ? (today.getDate() <= age.day ? 1 : 0) : 0)
             return `${years.isBetween(80, 90) ? 'n' : ''}${years}`
         }
 
