@@ -4,63 +4,100 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="assets/js/use.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/open-props" />
-    <link rel="stylesheet" href="https://unpkg.com/open-props/normalize.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/open-props/normalize.min.css"
+    />
     <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
 
-</head>
-
-<body>
+  <body>
     <section>
-        <header>
-            <h1>Odinh</h1>
-            <p>creative by <c>choice.</c>
-            </p>
-        </header>
-        <nav class="small-nav">
-            <ul>
-                <li><a href="/index.html" class="curr">who I am.</a></li>
-                <li><a href="/projects.html">projects.</a></li>
-                <li><a href="https://instagram.com/_odinh" target="_blank">instagram.</a></li>
-                <li><a href="https://github.com/odinnh" target="_blank">Github.</a></li>
-            </ul>
-        </nav>
-        <pre id="intro" class="output"><h3>Who I am.</h3><img class="profile" src="assets/img/profile.jpg" alt="">Hello, I am Odinn a <c class="age"></c> year old graphics designer from <c title="Holland?">The Netherlands.</c>
+      <header>
+        <h1>Odinh</h1>
+        <p>creative by <c>choice.</c></p>
+      </header>
+      <nav class="small-nav">
+        <ul>
+          <li><a href="/index.html" class="curr">who I am.</a></li>
+          <li><a href="/projects.html">projects.</a></li>
+          <li>
+            <a href="https://instagram.com/_odinh" target="_blank"
+              >instagram.</a
+            >
+          </li>
+          <li>
+            <a href="https://github.com/odinnh" target="_blank">Github.</a>
+          </li>
+        </ul>
+      </nav>
+      <pre
+        id="intro"
+        class="output"
+      ><h2>Who I am.</h2><img class="profile" src="assets/img/profile.jpg" alt="">Hello, I am Odinn a <c class="age"></c> year old graphics designer from <c title="Holland?">The Netherlands.</c>
 Pop culture, movies and comic books are my inspiration for a lot of my works.
 
-I like to tinker and puzzle with <span class="accent">digital designs</span> to create interactive idea's and unique experiences for clients, friends and pet projects!
+I like to tinker, puzzle and expirment with <span class="accent">digital designs</span> to create interactive idea's and unique experiences for clients, friends and pet projects!
+<div>
+Notably at my previous job at <a href="https://www.graphicinvention.nl" target="_blank">Graphic Invention</a> I was hired as a UX designer and All-round Web developer. We developed a whitepaper training tool for an large international company where I've done the UX, UI and some programming.<div>The technologies I became familiar with were Vue3, Google Firebase (auth/Sql-less database) and AWS buckets.
 
-Notably i've worked on a complete rebranding of a clothing store <a href="https://www.go-britain.nl/">Go&nbsp;Britain</a>. however, due to the 2020 pandemic we were unable to deploy the project.
+At Graphic Invention we also build custom templates and integrations for a hand full of companies in the area and Schiphol. 
+Gutenberg Block-themes and custom blocks are a new skillset I've learned to appreciate and became proficient with.</div><div>
+I've worked on a complete rebranding of a clothing store <a href="https://www.go-britain.nl/" target="_blank">Go&nbsp;Britain</a> 
+The rebranding entailed, in-store User Experience Design, website restyling, store-front overhaul and more.<div>However, due to the 2020 pandemic we were unable to deploy the project.
 
-
-During my co-op at <a href="https://www.laliquemuseum.nl/">Musee Lalique Netherlands</a> we've developed a catalogue/story documentation for a collection of works made by the famous glasswork artist Réne Lalique
-</pre>
+During my co-op at <a href="https://www.laliquemuseum.nl/" target="_blank">Musee Lalique Netherlands</a> we've developed a catalogue/story documentation for a collection of works made by the famous glasswork artist Réne Lalique
+</div></div></div></pre>
+    </section>
+    <section class="output">
+      <h2>Skills.</h2>
+      <div class="pills">
+        <div>Vue 3</div>
+        <div>Gutenberg Blocks</div>
+        <div>Gutenberg Block themes</div>
+        <div>Adobe Suite</div>
+        <div>Google Firestore</div>
+        <div>Product Photography</div>
+        <div>Javascript</div>
+        <div>Css</div>
+        <div>Html5</div>
+        <div>Html5</div>
+      </div>
     </section>
 
     <script>
-        function getAge() {
-            const age = {
-                day: 13,
-                month: 3,
-                year: 1994
-            }
-
-            const today = new Date()
-            let years = today.getFullYear() - age.year - (today.getMonth() <= age.month ? (today.getDate() <= age.day ? 1 : 0) : 0)
-            return `${years.isBetween(80, 90) ? 'n' : ''}${years}`
+      function getAge() {
+        const age = {
+          day: 13,
+          month: 2, // Month is zero-based in JavaScript Date (0 = January, 1 = February, 2 = March, ...)
+          year: 1994,
         }
 
-        document.querySelector('.age').innerHTML = getAge()
+        const today = new Date()
+        let years = today.getFullYear() - age.year
 
+        // Check if the birthday has occurred this year yet
+        const hasHadBirthdayThisYear =
+          today.getMonth() > age.month ||
+          (today.getMonth() === age.month && today.getDate() >= age.day)
+
+        if (!hasHadBirthdayThisYear) {
+          years--
+        }
+
+        // Check if the age is between 80 and 90
+        return `${years.isBetween(80, 90) ? 'n' : ''}${years}`
+      }
+
+      document.querySelector('.age').innerHTML = getAge()
     </script>
-</body>
-
+  </body>
 </html>
